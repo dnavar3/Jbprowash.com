@@ -1,0 +1,160 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #000000; /* Set the background color */
+    color: #e2dcdc;
+    height: 100%; /* Ensure the height covers the full viewport */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    background: url("images/IMG_6511 2.jpg") center center / cover no-repeat fixed;
+    background-attachment: fixed;
+    background-color: #000000;
+}
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Black overlay with 50% transparency */
+    z-index: 1;
+}
+.background-for-all {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/—Pngtree—white smoke floating elements_4158115.png') center center / contain no-repeat;
+    pointer-events: none; /* Prevent interaction with the smoke layer */
+    opacity: 0.09; /* Adjust opacity to control visibility */
+    animation: drift 20s infinite linear;
+    z-index: 10; /* Ensure it is above the background image */
+}
+@keyframes drift {
+    0% {
+        transform: translate(0, 0) scale(10);
+    }
+  
+    100% {
+        transform: translate(0, 0) scale(5);
+    }
+}
+body * {
+    position: relative;
+    z-index: 2;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.home-buttons {
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    gap: 70px;
+    margin-right: 40px;
+    font-family: "New Amsterdam", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+.home-buttons li {
+    cursor: pointer;
+    list-style-type: none;
+    font-size: 25px;
+    margin-top: 20px;
+    margin-right: 20px;
+   
+
+}
+#b1:hover,
+#b2:hover,
+#b3:hover {
+    color:#FF8C00;
+    font-size: 26px;
+    transition: .3s ease;
+}
+#b1,
+#b2,
+#b3,
+#Logo {
+    outline: none; /* Remove the focus outline */
+    user-select: none; /* Prevent text selection */
+}
+
+#b1:focus,
+#b2:focus,
+#b3:focus,
+#Logo:focus {
+    outline: none; /* Ensure no outline is shown on focus */
+}
+
+.intro-text {
+    margin-left: 6rem;
+    margin-top: 3rem;
+    font-family: "Russo One", sans-serif;
+    font-size: 40px;
+    
+}
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideInLeft 2s forwards;
+    font-family: "Russo One", sans-serif;
+    font-size: 100px;
+    animation-delay: 1s;
+    
+   
+}
+
+@keyframes slideInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.slide-in-leftt{
+    margin-top: 0px;
+    font-size: 60px;
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideInLeft 3s forwards;
+    animation-delay: 2s;
+    margin-top: -90px;
+    
+    
+    
+}
+@keyframes slideInLeftt {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.slide-in-lefttt {
+    font-family:  "New Amsterdam", sans-serif;
+    font-size: 250px;
+    color: transparent; /* Makes the inside of the font transparent */
+    -webkit-text-stroke: 1px rgb(104, 102, 102); /* Adds a 2px black outline */
+   margin-bottom: -190px;
+   margin-top: 1rem;
+   transform: translateX(-100%);
+    animation: slideInLeft 3s forwards;
+    position: relative;
+
+    transition: top 0.3s ease;
+    top: 0;
+}
+.slide-in-lefttt:hover{
+    top: -20px;
+}
+@keyframes slideInLeftt {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
