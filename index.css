@@ -4,21 +4,21 @@ body {
     box-sizing: border-box;
     background-color: #000000; /* Set the background color */
     color: #e2dcdc;
-    height: 100%; /* Ensure the height covers the full viewport */
+    height: 100vh; /* Ensure the height covers the full viewport */
     overflow-x: hidden; /* Prevent horizontal scrolling */
     background: url("images/IMG_6511 2.jpg") center center / cover no-repeat fixed;
     background-attachment: fixed;
     background-color: #000000;
 }
 body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Black overlay with 50% transparency */
-    z-index: 1;
+  content: "";
+  position: fixed; /* Ensures the overlay stays in place while scrolling */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Covers the full viewport height */
+  background-color: rgba(0, 0, 0, 0.7); /* Black overlay with 70% transparency */
+  z-index: 1;
 }
 .background-for-all {
     position: fixed;
@@ -99,6 +99,7 @@ body * {
     font-family: "Russo One", sans-serif;
     font-size: 40px;
     
+    
 }
 .slide-in-left {
     opacity: 0;
@@ -107,6 +108,9 @@ body * {
     font-family: "Russo One", sans-serif;
     font-size: 100px;
     animation-delay: 1s;
+
+    /* Adding the black shadow */
+    text-shadow: 3px 3px 5px #FF8C00;
     
    
 }
@@ -117,7 +121,7 @@ body * {
         transform: translateX(0);
     }
 }
-.slide-in-leftt{
+.slide-in-leftt {
     margin-top: 0px;
     font-size: 60px;
     opacity: 0;
@@ -125,6 +129,7 @@ body * {
     animation: slideInLeft 3s forwards;
     animation-delay: 2s;
     margin-top: -90px;
+    text-shadow: 2px 2px 5px #FF8C00;
     
     
     
@@ -157,4 +162,235 @@ body * {
         opacity: 1;
         transform: translateX(0);
     }
+}
+.buttons {
+    margin-top: 50px;
+    text-align: center;
+    border-radius: 30px;
+    
+  }
+  
+  .blob-btn {
+    position: relative;
+    padding: 20px 46px;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FF8C00;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    transition: color 0.5s;
+    cursor: pointer;
+    border-radius: 30px;
+    z-index: 1;
+    margin-left: 0; /* Reset the margin */
+    position: absolute; /* Use absolute positioning */
+    left: 400px; /* Position the button to the left */
+  }
+  
+  .blob-btn:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #FF8C00;
+    border-radius: 30px;
+    z-index: 1;
+  }
+  
+  .blob-btn:after {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s 0.2s;
+    border-radius: 30px;
+    z-index: -2;
+  }
+  
+  .blob-btn:hover {
+    color: #FFFFFF;
+    border-radius: 30px;
+  }
+  
+  .blob-btn:hover:after {
+    transition: all 0.3s;
+    left: 0;
+    top: 0;
+    border-radius: 30px;
+  }
+  
+  .blob-btn__inner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 30px;
+    background: transparent;
+    z-index: -1;
+  }
+  
+  .blob-btn__blobs {
+    position: relative;
+    display: block;
+    height: 100%;
+    filter: url('#goo');
+  }
+  
+  .blob-btn__blob {
+    position: absolute;
+    top: 0; /* Change from 2px to 0 */
+    width: 25%;
+    height: 105%; /* Increase height slightly */
+    background: #FF8C00;
+    border-radius: 100%;
+    transform: translate3d(0, 150%, 0) scale(1.7);
+    transition: transform 0.45s;
+  }
+  
+  @supports (filter: url('#goo')) {
+    .blob-btn__blob {
+      transform: translate3d(0, 150%, 0) scale(1.4);
+    }
+  }
+  
+  .blob-btn__blob:nth-child(1) {
+    left: 0;
+    transition-delay: 0s;
+  }
+  
+  .blob-btn__blob:nth-child(2) {
+    left: 30%;
+    transition-delay: 0.08s;
+  }
+  
+  .blob-btn__blob:nth-child(3) {
+    left: 60%;
+    transition-delay: 0.16s;
+  }
+  
+  .blob-btn__blob:nth-child(4) {
+    left: 90%;
+    transition-delay: 0.24s;
+  }
+  
+  .blob-btn:hover .blob-btn__blob {
+    transform: translateZ(0) scale(1.7);
+  }
+  
+  @supports (filter: url('#goo')) {
+    .blob-btn:hover .blob-btn__blob {
+      transform: translateZ(0) scale(1.4);
+    }
+  }
+  .blob-btn{
+    margin-left: -100px;
+  }
+  #about {
+    background-color: rgba(0, 0, 0, 0.7); /* 50% transparent black */
+    
+    color: white;
+    height: 1000px;
+    margin-top: 200px;
+  }
+  #h1 {
+    text-align: center;
+    margin-top: 10rem;
+  }
+  .smoke-container {
+    position: relative;
+    z-index: 1;
+}
+
+.background-for-all {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/—Pngtree—white smoke floating elements_4158115.png') center center / contain no-repeat;
+    pointer-events: none; /* Prevent interaction with the smoke layer */
+    opacity: 0.09; /* Adjust opacity to control visibility */
+    animation: drift 20s infinite linear;
+    z-index: 10; /* Ensure it is above the background image */
+}
+#about {
+  display:flex;
+  justify-content: space-between;
+  
+}
+#about-content {
+    font-size: 90px;
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideInLeft 3s forwards;
+    animation-delay: 2s;
+    
+    margin-top: 150px;
+    margin-left: 100px;
+    font-family:  "New Amsterdam", sans-serif;
+}
+.animated-text {
+  font-size: 60px;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  
+}
+
+.slide-in {
+  animation: slideInLeft 1.5s forwards;
+  animation-delay: .5s;
+}
+
+@keyframes slideInLeft {
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+.two-column-list {
+  display: flex;
+  justify-content: space-between;
+  top: -30px;
+  text-align: center;
+  font-family:  "New Amsterdam", sans-serif;
+  font-size: 40px;
+  margin-left: 100px;
+  gap: 100px;
+  animation: slideInLeft 3s forwards;
+  
+}
+
+.two-column-list ul {
+  list-style-type: none; /* Remove default bullets */
+  padding: 0;
+}
+
+.two-column-list li {
+  position: relative;
+  padding-left: 20px; /* Space for the custom bullet */
+  margin-bottom: 10px;
+}
+
+.two-column-list li::before {
+  content: "•"; /* Bullet point */
+  color: #FF8C00; /* Custom bullet color */
+  position: absolute;
+  left: 0;
+}
+
+#pic-in-about {
+  height: 600px;
+  width: 50%;
+
 }
